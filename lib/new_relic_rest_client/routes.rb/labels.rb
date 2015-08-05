@@ -2,7 +2,6 @@ module NRRC
 	module Routes
 		class Labels
 			extend Helpers
-			extend Common
 			URL_BASE = "#{Base}/labels"
 
 			class << self
