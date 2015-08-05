@@ -11,10 +11,10 @@ module NRRC
 
 				def create id, data
 					make_request(
-						put_action.update {
-							payload: data
+						put_action.update({
+							payload: data,
 							url: "#{url id}.json"
-						}
+						})
 					)
 				end
 

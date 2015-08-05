@@ -1,6 +1,6 @@
 module NRRC
 	module Routes
-		class Plugins
+		class Components
 			extend Helpers
 			extend Common
 			URL_BASE = "#{Base}/components"

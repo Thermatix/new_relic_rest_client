@@ -23,10 +23,10 @@ module NRRC
 
 				def create_event id, data
 					make_request(
-						create_action.update {
+						create_action.update({
 							payload: data,
 							url: "#{url id}/events.json"
-						}
+						})
 					)
 				end
 

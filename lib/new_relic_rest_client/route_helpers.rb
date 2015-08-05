@@ -7,8 +7,8 @@ module NRRC
 		end
 		Base = 'https://api.newrelic.com/v2/'
 		module Helpers
-			def deep_copy(o)
-				Marshal.load(Marshal.dump(o))
+			def deep_copy(object)
+				Marshal.load(Marshal.dump(object))
 			end
 
 			def url id
@@ -16,41 +16,41 @@ module NRRC
 			end
 
 			def get_action
-				 deep_copy { 
+				 deep_copy({ 
 					method: :get,
 					headers: {
 						:"X-Api-Key" => Routes.api_key,
 					}
-				}
+				})
 			end
 
 			def put_action
-				deep_copy {
+				deep_copy({
 					method: :put,
 					headers: {
 						:"X-Api-Key" => Routes.api_key,
 						content_type: :json,	
 					}
-				}
+				})
 			end
 
 			def delete_action
-				deep_copy {
+				deep_copy({
 					method: :delete,
 					headers: {
 						:"X-Api-Key" => Routes.api_key,
 					}
-				}
+				})
 			end
 
 			def create_action
-				deep_copy {
+				deep_copy({
 					method: :post,
 					headers: {
 						:"X-Api-Key" => Routes.api_key,
 						content_type: :json,	
 					}
-				}
+				})
 			end
 			private 
 

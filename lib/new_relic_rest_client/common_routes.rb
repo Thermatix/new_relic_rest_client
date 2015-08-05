@@ -22,10 +22,10 @@ module NRRC
 			module Unsafe
 				def update id, data
 					make_request(
-						put_action.update {
-							payload: data
+						put_action.update({
+							payload: data,
 							url: "#{url id}.json"
-						}
+						})
 					)
 				end
 
@@ -37,10 +37,10 @@ module NRRC
 			module New
 				def create id, data
 					make_request(
-						create_action.update {
+						create_action.update({
 							payload: data,
 							url: "#{url id}.json"
-						}
+						})
 					)
 				end
 			end
