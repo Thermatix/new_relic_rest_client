@@ -1,8 +1,21 @@
 # new_relic_rest_client
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/new_relic_rest_client`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is a ruby client to access the new relic API.
+It's pretty simple to use.
 
-TODO: Delete this and the text above, and describe your gem
+First set your api key like so:
+
+```ruby
+NRRC.api_key = File.open("api_key", "r") { |file| file.read }
+```
+
+Then make a request for data.
+
+``` ruby
+puts NRRC::Routes::Applications.list 
+puts NRRC::Routes::Applications.show "23423423"
+```
+
 
 ## Installation
 

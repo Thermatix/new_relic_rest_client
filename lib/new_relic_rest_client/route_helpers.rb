@@ -12,42 +12,42 @@ module NRRC
 				"#{@url_base}/%s" % [id]
 			end
 
-			def get_action with
+			def get_action with,params={}
 				 make_request(deep_copy({ 
 					method: :get,
 					headers: {
 						:"X-Api-Key" => Routes.api_key,
 					}
-				}).update(with))
+				}).update(with.update(headers: params)))
 			end
 
-			def put_action with
+			def put_action with,params={}
 				make_request(deep_copy({
 					method: :put,
 					headers: {
 						:"X-Api-Key" => Routes.api_key,
 						content_type: :json,	
 					}
-				}).update(with))
+				}).update(with.update(headers: params)))
 			end
 
-			def delete_action with
+			def delete_action with,params={}
 				make_request(deep_copy({
 					method: :delete,
 					headers: {
 						:"X-Api-Key" => Routes.api_key,
 					}
-				}).update(with))
+				}).update(with.update(headers: params)))
 			end
 
-			def create_action with
+			def create_action with,params={}
 				make_request(deep_copy({
 					method: :post,
 					headers: {
 						:"X-Api-Key" => Routes.api_key,
 						content_type: :json,	
 					}
-				}).update(with))
+				}).update(with.update(headers: params)))
 			end
 			private 
 

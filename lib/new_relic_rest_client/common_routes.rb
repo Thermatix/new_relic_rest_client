@@ -1,8 +1,8 @@
 module NRRC
 	module Routes
 		module Common
-			def list
-				get_action(url:"#{@url_base}.json")
+			def list params
+				get_action(url:"#{@url_base}.json",params)
 			end
 
 			def show id
@@ -10,12 +10,12 @@ module NRRC
 			end
 
 			module Metrics
-				def metric_names id
-					get_action(url: "#{url id}/metrics.json")
+				def metric_names id, params
+					get_action(url: "#{url id}/metrics.json",params)
 				end
 
-				def metric_data id
-					get_action(url: "#{url id}/metrics/data.json")
+				def metric_data id,params
+					get_action(url: "#{url id}/metrics/data.json",params)
 				end
 			end
 

@@ -9,11 +9,11 @@ module NRRC
 			class << self
 				
 
-				def event_list id
-					get_action(url: "#{url id}/events.json")
+				def event_list id,params
+					get_action(url: "#{url id}/events.json",params)
 				end
 
-				def event_show id, event_id
+				def event_show id,event_id
 					get_action(url: "#{url id}/events/#{event_id}.json")
 				end
 
@@ -28,8 +28,8 @@ module NRRC
 					)
 				end
 
-				def downtime_list id
-					get_action(url: "#{url id}/target_downtime_events.json")
+				def downtime_list id,params
+					get_action(url: "#{url id}/target_downtime_events.json",params)
 				end
 
 				def downtime_show id,event_id
