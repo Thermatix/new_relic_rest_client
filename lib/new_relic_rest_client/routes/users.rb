@@ -6,11 +6,11 @@ module NRRC
 			extend Common::Metrics
 			extend Common::Unsafe
 			extend Common::New
-			URL_BASE = "#{Base}/users"
+			@url_base = "#{Base}/users"
 
 			class << self
 				def reset_password id, data
-					make_request(create_action[:url] =  "#{url id}/reset_password.json")
+					create_action(url:  "#{url id}/reset_password.json")
 				end
 			end
 		end

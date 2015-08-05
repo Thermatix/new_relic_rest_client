@@ -4,7 +4,7 @@ module NRRC
 			extend Helpers
 			extend Common
 			extend Common::New
-			URL_BASE = "#{Base}/browser_applications"
+			@url_base = "#{Base}/browser_applications"
 		end
 	end
 end

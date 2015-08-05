@@ -3,7 +3,7 @@ module NRRC
 		class Components
 			extend Helpers
 			extend Common
-			URL_BASE = "#{Base}/components"
+			@url_base = "#{Base}/components"
 		end
 	end
 end

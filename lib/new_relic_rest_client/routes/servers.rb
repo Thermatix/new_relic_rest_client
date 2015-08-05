@@ -6,7 +6,7 @@ module NRRC
 			extend Common::Metrics
 			extend Common::Unsafe
 			extend Common::New
-			URL_BASE = "#{Base}/server"
+			@url_base = "#{Base}/server"
 		end
 	end
 end

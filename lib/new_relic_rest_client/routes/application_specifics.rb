@@ -4,27 +4,25 @@ module NRRC
 			extend Helpers
 			class << self
 
-				URL_BASE = "#{Base}/applications"
-
-
+				@url_base = "#{Base}/applications"
 				def url id
-					"#{URL_BASE}/%s/#{@specific}" % [id]
+					"#{@url_base}/%s/#{@specific}" % [id]
 				end
 
 				def list id
-					make_request(get_action[:url] = "#{url id}.json",)
+					get_action(url: "#{url id}.json")
 				end
 
 				def show id, specific_id
-					make_request(get_action[:url] = "#{url id}/#{specific_id}.json",)
+					get_action(url: "#{url id}/#{specific_id}.json")
 				end
 
 				def metric_names id, specific_id
-					make_request(get_action[:url] = "#{url id}/#{specific_id}/metrics.json")
+					get_action(url: "#{url id}/#{specific_id}/metrics.json")
 				end
 
 				def metric_data id, specific_id
-					make_request(get_action[:url] = "#{url id}/#{specific_id}/metrics/data.json")
+					get_action(url: "#{url id}/#{specific_id}/metrics/data.json")
 				end
 			end
 		end

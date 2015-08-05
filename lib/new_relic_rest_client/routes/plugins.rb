@@ -3,7 +3,7 @@ module NRRC
 		class Plugins
 			extend Helpers
 			extend Common
-			URL_BASE = "#{Base}/plugins"
+			@url_base = "#{Base}/plugins"
 		end
 	end
 end

@@ -4,7 +4,7 @@ module NRRC
 			extend Helpers
 			extend Common
 			extend Common::Metrics
-			URL_BASE = "#{Base}/mobile_applications"
+			@url_base = "#{Base}/mobile_applications"
 		end
 	end
 end

@@ -3,7 +3,7 @@ module NRRC
 		class Key_Transactions
 			extend Helpers
 			extend Common
-			URL_BASE = "#{Base}/key_transactions"
+			@url_base = "#{Base}/key_transactions"
 		end
 	end
 end
