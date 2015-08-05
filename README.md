@@ -1,20 +1,7 @@
 # new_relic_rest_client
 
 This is a ruby client to access the new relic API.
-It's pretty simple to use.
 
-First set your api key like so:
-
-```ruby
-NRRC.api_key = File.open("api_key", "r") { |file| file.read }
-```
-
-Then make a request for data.
-
-``` ruby
-puts NRRC::Routes::Applications.list 
-puts NRRC::Routes::Applications.show "23423423"
-```
 
 
 ## Installation
@@ -35,7 +22,148 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+First set your api key like so:
+
+```ruby        
+NRRC.api_key = "23423423948239040jf0asdfjsdjifnasdkhlbashbfasfb" 
+```
+
+Then make a request for data.
+
+``` ruby
+puts NRRC::Routes::Applications.list 
+puts NRRC::Routes::Applications.show "23423423"
+```
+
+you can also pass in params
+
+```ruby
+puts NRRC::Routes::Applications.list({"filter[ids]" => ["23423423"]})
+```
+
+It does support updating,creating and deleting in the same way
+
+##Function listing
+
+Here's the list of functions and there arguments, grouped by route.
+
+### Applications
+
+```ruby
+NRRC::Routes::Applications
+    list params={}
+    show app_id
+    update app_id, data={}
+    delete app_id
+    metric_names app_id, params={}
+    metric_data app_id, params={}
+    event_list app_id, params={}
+    event_show app_id,event_id
+    event_close app_id, event_id
+    create_event app_id, data={}               
+    downtime_list app_id, params={}
+    downtime_show app_id,event_id
+```
+
+### Application Hosts
+
+```ruby
+NRRC::Routes::Application_Hosts
+    list app_id, params={}
+    show app_id, host_id
+    metric_names app_id, host_id, params={}
+    metric_data app_id, host_id, params={}
+```
+
+### Application Instances
+
+```ruby
+NRRC::Routes::Application_Instances
+    list app_id, params={}
+    show app_id, instance_id
+    metric_names app_id, instance_id, params={}
+    metric_data app_id, instance_id, params={}
+```
+
+### Mobile Applications
+
+```ruby
+NRRC::Routes::Mobile_applications
+    list params={}
+    show app_id
+    metric_names app_id, params={}
+    metric_data app_id, params={}
+```
+
+### Browser Applications
+
+```ruby
+NRRC::Routes::Browser_Applications
+    list params={}
+    create data={}
+```
+
+### Key Transactions
+
+```ruby
+NRRC::Routes::Key_Transactions
+    list app_id, params={}
+    show app_id
+```
+
+### Servers
+
+```ruby
+NRRC::Routes::Servers
+    list params={}
+    show app_id
+    update app_id, data={}
+    delete app_id
+    metric_names app_id, params={}
+    metric_data app_id, params={}
+```
+
+### Notification Channels
+
+```ruby
+NRRC::Routes::Notification_Channels
+    list params={}
+    show app_id
+```
+
+### Users
+
+```ruby
+NRRC::Routes::Servers
+    list params={}
+    show app_id
+    reset_password user_id
+```
+
+### Plugins
+
+```ruby
+NRRC::Routes::Plugins
+    list params={}
+    show plugin_id
+```
+
+### Components
+
+```ruby
+NRRC::Routes::Components
+    list params={}
+    show component_id
+```
+
+### Labels
+
+```ruby
+NRRC::Routes::Labels
+ list params={}
+ create  data
+ delete label_id
+```
 
 ## Development
 

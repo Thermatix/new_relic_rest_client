@@ -13,41 +13,49 @@ module NRRC
 			end
 
 			def get_action with,params={}
-				 make_request(deep_copy({ 
+				action = deep_copy({ 
 					method: :get,
 					headers: {
-						:"X-Api-Key" => Routes.api_key,
+						:"X-Api-Key" => Routes.api_key
 					}
-				}).update(with.update(headers: params)))
+				}).update(with)
+				action[:headers].update(params: params)
+				make_request(action)
 			end
 
 			def put_action with,params={}
-				make_request(deep_copy({
+				action = deep_copy({ 
 					method: :put,
 					headers: {
 						:"X-Api-Key" => Routes.api_key,
-						content_type: :json,	
+						content_type: :json,
 					}
-				}).update(with.update(headers: params)))
+				}).update(with)
+				action[:headers].update(params: params)
+				make_request(action)
 			end
 
 			def delete_action with,params={}
-				make_request(deep_copy({
+				action = deep_copy({ 
 					method: :delete,
 					headers: {
-						:"X-Api-Key" => Routes.api_key,
+						:"X-Api-Key" => Routes.api_key
 					}
-				}).update(with.update(headers: params)))
+				}).update(with)
+				action[:headers].update(params: params)
+				make_request(action)
 			end
 
 			def create_action with,params={}
-				make_request(deep_copy({
+				action = deep_copy({ 
 					method: :post,
 					headers: {
 						:"X-Api-Key" => Routes.api_key,
-						content_type: :json,	
+						content_type: :json,
 					}
-				}).update(with.update(headers: params)))
+				}).update(with)
+				action[:headers].update(params: params)
+				make_request(action)
 			end
 			private 
 

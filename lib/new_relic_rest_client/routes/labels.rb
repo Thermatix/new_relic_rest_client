@@ -5,14 +5,14 @@ module NRRC
 			@url_base = "#{Base}/labels"
 
 			class << self
-				def list, params
-					get_action(url: "#{@url_base}.json",params)
+				def list params={}
+					get_action({url: "#{@url_base}.json"},params)
 				end
 
-				def create id, data
+				def create  data
 					put_action(
 						payload: data,
-						url: "#{url id}.json"
+						url: "#{@url_base}.json"
 					)
 				end
 
