@@ -60,7 +60,6 @@ module NRRC
 			private 
 
 			def make_request request_hash
-				puts request_hash
 				::RestClient::Request.execute request_hash
 			end
 
